@@ -16,17 +16,26 @@ func MaximumTripletValueBruteForce(nums []int) int64 {
 }
 
 func MaximumTripletValuePrefixSuffixArray(nums []int) int64 {
-	var n int = len(nums)
 	var res int64 = 0
-	left := nums[0]
+	var n int = len(nums)
+	leftMax := make([]int, n)
+	rightMax := make([]int, n)
 
-	for j := 1; j < n; j++ {
-		left = max(left, nums[j])
+	// Build leftMax: Maximum from index 0 to i
+	leftMax[0] = nums[0]
+	for i := 1; i < n; i++ {
+		leftMax[i] = max(leftMax[i-1], nums[i])
+	}
 
-		for k := j + 1; k < n; k++ {
-			res = max(res, int64(left-nums[j])*int64(nums[k]))
-		}
+	// Build rightMax: Maximum from index i+1 to n-1
+	rightMax[n-1] = nums[n-1]
+	for i := n - 2; i >= 0; i-- {
+		rightMax[i] = max(rightMax[i+1], nums[i]) // Fixed: Use nums[i] instead of nums[i+1]
+	}
 
+	// Compute maximum triplet value
+	for j := 1; j < n-1; j++ {
+		res = max(res, int64(leftMax[j-1]-nums[j])*int64(rightMax[j+1]))
 	}
 
 	return res
