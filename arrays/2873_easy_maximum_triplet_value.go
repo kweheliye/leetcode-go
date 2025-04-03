@@ -15,7 +15,7 @@ func MaximumTripletValueBruteForce(nums []int) int64 {
 	return res
 }
 
-func MaximumTripletValueGreedy(nums []int) int64 {
+func MaximumTripletValuePrefixSuffixArray(nums []int) int64 {
 	var n int = len(nums)
 	var res int64 = 0
 	left := nums[0]

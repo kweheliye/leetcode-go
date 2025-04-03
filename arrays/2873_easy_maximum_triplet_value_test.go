@@ -1,6 +1,9 @@
 package arrays
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestMaximumTripletValueBruteForce(t *testing.T) {
 	tests := []struct {
@@ -31,6 +34,39 @@ func TestMaximumTripletValueBruteForce(t *testing.T) {
 
 			if result != tt.expected {
 				t.Errorf("MaximumTripletValueBruteForce(%v) = %v; want %v", tt.input, result, tt.expected)
+			}
+		})
+	}
+}
+
+func TestMaximumTripletValuePrefixSuffixArray(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    []int
+		expected int64
+	}{
+		{
+			name:     "Test Case 1",
+			input:    []int{12, 6, 1, 2, 7},
+			expected: 77, // Expected result
+		},
+		{
+			name:     "Test Case 2",
+			input:    []int{1, 10, 3, 4, 19},
+			expected: 133, // Expected result
+		},
+		{
+			name:     "Test Case 3",
+			input:    []int{1, 2, 3},
+			expected: 0, // Expected result
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(fmt.Sprintf("nums=%v", test.name), func(t *testing.T) {
+			got := MaximumTripletValuePrefixSuffixArray(test.input)
+			if got != test.expected {
+				t.Errorf("MaximumTripletValuePrefixSuffixArray(%v) = %v, want %v", test.input, got, test.expected)
 			}
 		})
 	}
