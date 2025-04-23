@@ -1,4 +1,4 @@
-package arrays
+package easy
 
 func MaximumTripletValueBruteForce(nums []int) int64 {
 	var n int = len(nums)
