@@ -1,4 +1,4 @@
-package easy
+package medium
 
 func MaximumTripletValueGreedy(nums []int) int64 {
 	n := len(nums)
