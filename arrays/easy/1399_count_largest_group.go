@@ -2,7 +2,7 @@ package easy
 
 func countLargestGroup(n int) int {
 	hashMap := make(map[int]int)
-	var maxValue int = 0
+	var maxValue = 0
 
 	for i := 1; i <= n; i++ {
 		key, i0 := 0, i

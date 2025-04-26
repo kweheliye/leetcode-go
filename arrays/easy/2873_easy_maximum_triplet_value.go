@@ -1,7 +1,7 @@
 package easy
 
 func MaximumTripletValueBruteForce(nums []int) int64 {
-	var n int = len(nums)
+	var n = len(nums)
 	var res int64 = 0
 
 	for i := 0; i < n; i++ {
@@ -17,7 +17,7 @@ func MaximumTripletValueBruteForce(nums []int) int64 {
 
 func MaximumTripletValuePrefixSuffixArray(nums []int) int64 {
 	var res int64 = 0
-	var n int = len(nums)
+	var n = len(nums)
 	leftMax := make([]int, n)
 	rightMax := make([]int, n)
 
