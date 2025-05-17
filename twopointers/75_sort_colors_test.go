@@ -32,7 +32,7 @@ func TestSortColors(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			sortColors(tc.args.nums)
 			if !reflect.DeepEqual(tc.args.nums, tc.want) {
-				t.Errorf("got: %v, want: %v", tc.args, tc.want)
+				t.Errorf("expected: %v, want: %v", tc.args, tc.want)
 			}
 		})
 	}
