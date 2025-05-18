@@ -63,13 +63,13 @@ func Test_mergeTwoLists(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name+" (Recursive)", func(t *testing.T) {
 			if got := mergeTwoListsV1(tt.args.l1, tt.args.l2); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("mergeTwoListsV1() = %v, want %v", got, tt.want)
+				t.Errorf("mergeTwoListsV1() = %v, expected %v", got, tt.want)
 			}
 		})
 
 		t.Run(tt.name+" (Iterative)", func(t *testing.T) {
 			if got := mergeTwoListsV2(tt.args.l1, tt.args.l2); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("mergeTwoListsV2() = %v, want %v", got, tt.want)
+				t.Errorf("mergeTwoListsV2() = %v, expected %v", got, tt.want)
 			}
 		})
 	}
