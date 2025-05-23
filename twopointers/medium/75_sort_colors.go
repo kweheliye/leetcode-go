@@ -1,4 +1,4 @@
-package twopointers
+package medium
 
 func sortColors(nums []int) {
 
