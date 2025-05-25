@@ -1,6 +1,33 @@
 package medium
 
-func longestPalindrome(words []string) int {
+// A Two-Dimensional Array Approach
+func longestPalindromeV2(words []string) int {
+	const alphabetSize = 26
+	ans := 0
+	freq := [alphabetSize][alphabetSize]int{}
+
+	for _, word := range words {
+		a := word[0] - 'a'
+		b := word[1] - 'a'
+		if freq[b][a] > 0 {
+			freq[b][a]--
+			ans += 4
+		} else {
+			freq[a][b]++
+		}
+	}
+
+	for i := 0; i < alphabetSize; i++ {
+		if freq[i][i] > 0 {
+			return ans + 2
+		}
+	}
+
+	return ans
+}
+
+// A Hash Map Approach
+func longestPalindromeV1(words []string) int {
 	count := make(map[string]int)
 	for _, word := range words {
 		count[word]++

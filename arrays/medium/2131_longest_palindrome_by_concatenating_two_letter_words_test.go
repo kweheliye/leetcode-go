@@ -35,7 +35,12 @@ func TestLongestPalindrome(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := longestPalindrome(tt.args.words); got != tt.want {
+			if got := longestPalindromeV1(tt.args.words); got != tt.want {
+				t.Errorf("longestPalindrome() = %v, want %v", got, tt.want)
+			}
+		})
+		t.Run(tt.name, func(t *testing.T) {
+			if got := longestPalindromeV2(tt.args.words); got != tt.want {
 				t.Errorf("longestPalindrome() = %v, want %v", got, tt.want)
 			}
 		})
