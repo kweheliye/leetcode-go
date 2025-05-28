@@ -24,10 +24,19 @@ func TestCoinChange(t *testing.T) {
 	}
 	for _, testCase := range testCases {
 		t.Run(testCase.name, func(t *testing.T) {
-			result := coinChange(testCase.input, testCase.input2)
+			result := coinChangeTopDown(testCase.input, testCase.input2)
 
 			if result != testCase.expected {
-				t.Errorf("Expected %v, but got %v", testCase.expected, result)
+				t.Errorf("coinChangeTopDown() Expected %v, but got %v", testCase.expected, result)
+			}
+
+		})
+
+		t.Run(testCase.name, func(t *testing.T) {
+			result := coinChangeBottomUp(testCase.input, testCase.input2)
+
+			if result != testCase.expected {
+				t.Errorf("coinChangeBottomUp() Expected %v, but got %v", testCase.expected, result)
 			}
 
 		})
