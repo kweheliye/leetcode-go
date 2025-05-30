@@ -1,6 +1,8 @@
-package linkedlist
+package easy
 
-func mergeTwoListsV1(l1 *ListNode, l2 *ListNode) *ListNode {
+import "github.com/kweheliye/leetcode-go/linkedlist"
+
+func mergeTwoListsV1(l1 *linkedlist.ListNode, l2 *linkedlist.ListNode) *linkedlist.ListNode {
 
 	if l1 == nil {
 		return l2
@@ -15,8 +17,8 @@ func mergeTwoListsV1(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 }
 
-func mergeTwoListsV2(l1 *ListNode, l2 *ListNode) *ListNode {
-	prehead := &ListNode{-1, nil}
+func mergeTwoListsV2(l1 *linkedlist.ListNode, l2 *linkedlist.ListNode) *linkedlist.ListNode {
+	prehead := &linkedlist.ListNode{-1, nil}
 	prev := prehead
 
 	for l1 != nil && l2 != nil {

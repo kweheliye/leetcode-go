@@ -1,55 +1,56 @@
-package linkedlist
+package easy
 
 import (
+	"github.com/kweheliye/leetcode-go/linkedlist"
 	"reflect"
 	"testing"
 )
 
 func Test_mergeTwoLists(t *testing.T) {
 	type args struct {
-		l1 *ListNode
-		l2 *ListNode
+		l1 *linkedlist.ListNode
+		l2 *linkedlist.ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *ListNode
+		want *linkedlist.ListNode
 	}{
 		{
 			name: "Test Case 1",
 			args: args{
-				l1: &ListNode{
+				l1: &linkedlist.ListNode{
 					Val: 1,
-					Next: &ListNode{
+					Next: &linkedlist.ListNode{
 						Val: 2,
-						Next: &ListNode{
+						Next: &linkedlist.ListNode{
 							Val:  4,
 							Next: nil,
 						},
 					},
 				},
-				l2: &ListNode{
+				l2: &linkedlist.ListNode{
 					Val: 1,
-					Next: &ListNode{
+					Next: &linkedlist.ListNode{
 						Val: 3,
-						Next: &ListNode{
+						Next: &linkedlist.ListNode{
 							Val:  4,
 							Next: nil,
 						},
 					},
 				},
 			},
-			want: &ListNode{
+			want: &linkedlist.ListNode{
 				Val: 1,
-				Next: &ListNode{
+				Next: &linkedlist.ListNode{
 					Val: 1,
-					Next: &ListNode{
+					Next: &linkedlist.ListNode{
 						Val: 2,
-						Next: &ListNode{
+						Next: &linkedlist.ListNode{
 							Val: 3,
-							Next: &ListNode{
+							Next: &linkedlist.ListNode{
 								Val: 4,
-								Next: &ListNode{
+								Next: &linkedlist.ListNode{
 									Val:  4,
 									Next: nil,
 								},
