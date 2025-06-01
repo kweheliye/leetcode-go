@@ -18,7 +18,7 @@ func closeStrings(word1 string, word2 string) bool {
 		return false
 	}
 	for char := range word1Map {
-		if _, exists := word2Map[char]; !exists {
+		if _, exist := word2Map[char]; exist {
 			return false
 		}
 	}
