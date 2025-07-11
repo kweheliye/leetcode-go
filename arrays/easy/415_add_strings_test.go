@@ -1,6 +1,8 @@
 package easy
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestAddStrings(t *testing.T) {
 	type args struct {
