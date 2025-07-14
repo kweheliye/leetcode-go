@@ -3,10 +3,10 @@ package easy
 import "github.com/kweheliye/leetcode-go/linkedlist"
 
 func getDecimalValue(head *linkedlist.ListNode) int {
-	num := head.Val
+	num := 0
 
-	for head.Next != nil {
-		num = num*2 + head.Next.Val
+	for head != nil {
+		num = num*2 + head.Val
 		head = head.Next
 	}
 	return num
