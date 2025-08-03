@@ -31,8 +31,16 @@ func TestMajorityElement(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := majorityElement(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("majorityElement() = %v, want %v", got, tt.want)
+			if got := majorityElementFrequencyCount(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("majorityElementFrequencyCount() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := majorityElementBoyerMooreVotingAlgorithm(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("majorityElementBoyerMooreVotingAlgorithm() = %v, want %v", got, tt.want)
 			}
 		})
 	}
