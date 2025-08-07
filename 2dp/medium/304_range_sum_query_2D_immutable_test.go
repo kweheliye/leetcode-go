@@ -13,10 +13,10 @@ func TestConstructor(t *testing.T) {
 		{1, 0, 3, 0, 5},
 	}
 
-	numMatrix := Constructor(matrix)
+	numMatrix := ConstructorBruteForce(matrix)
 
 	if len(numMatrix.data) != len(matrix) {
-		t.Errorf("Constructor() failed: expected %v rows, got %v", len(matrix), len(numMatrix.data))
+		t.Errorf("ConstructorBruteForce() failed: expected %v rows, got %v", len(matrix), len(numMatrix.data))
 	}
 }
 
@@ -71,10 +71,18 @@ func TestNumMatrix_SumRegionBruteForce(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			nm := Constructor(tt.matrix)
+			nm := ConstructorBruteForce(tt.matrix)
 			got := nm.SumRegionBruteForce(tt.args.row1, tt.args.col1, tt.args.row2, tt.args.col2)
 			if got != tt.want {
 				t.Errorf("SumRegionBruteForce() = %v, want %v", got, tt.want)
+			}
+		})
+
+		t.Run(tt.name, func(t *testing.T) {
+			nm := ConstructorOneDimensionalPrefixSum(tt.matrix)
+			got := nm.SumRegionOneDimensionalPrefixSum(tt.args.row1, tt.args.col1, tt.args.row2, tt.args.col2)
+			if got != tt.want {
+				t.Errorf("SumRegionOneDimensionalPrefixSum() = %v, want %v", got, tt.want)
 			}
 		})
 	}
