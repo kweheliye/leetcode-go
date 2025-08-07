@@ -41,6 +41,7 @@ func Test_numOfUnplacedFruitsV1(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := numOfUnplacedFruitsV1(tt.args.fruits, tt.args.baskets); got != tt.want {
 				t.Errorf("numOfUnplacedFruitsV1() = %v, want %v", got, tt.want)
+
 			}
 		})
 	}
