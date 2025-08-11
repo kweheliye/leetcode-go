@@ -28,9 +28,9 @@ func TestBubbleSort(t *testing.T) {
 		{
 			name: "Already sorted array",
 			args: args{
-				nums: []int{1, 2, 3, 4, 5},
+				nums: []int{9, 1, 2, 3, 4, 5},
 			},
-			want: []int{1, 2, 3, 4, 5},
+			want: []int{1, 2, 3, 4, 5, 9},
 		},
 		{
 			name: "Reverse sorted array",

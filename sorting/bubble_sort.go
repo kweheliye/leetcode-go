@@ -1,5 +1,7 @@
 package sorting
 
+import "log"
+
 func bubbleSort(nums []int) {
 	for i := 1; i < len(nums); i++ {
 		for j := 0; j < len(nums)-i; j++ {
@@ -7,5 +9,6 @@ func bubbleSort(nums []int) {
 				nums[j], nums[j+1] = nums[j+1], nums[j]
 			}
 		}
+		log.Println(nums)
 	}
 }
