@@ -3,7 +3,7 @@ package medium
 import "sort"
 
 func numRescueBoats(people []int, limit int) int {
-	sort.Ints(people)
+	sort.Ints(people) // Ascending sort
 
 	ans, left, right := 0, 0, len(people)-1
 
