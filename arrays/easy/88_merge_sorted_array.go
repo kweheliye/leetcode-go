@@ -12,13 +12,13 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
 			nums1[last] = nums2[n-1]
 			n--
 		}
-		last++
+		last--
 	}
 
 	for n > 0 {
 		nums1[last] = nums2[n-1]
 		n--
-		last++
+		last--
 	}
 
 }
