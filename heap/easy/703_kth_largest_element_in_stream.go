@@ -38,5 +38,4 @@ func (kLargest *KthLargest) Add(val int) int {
 	}
 
 	return (*kLargest.minHeap)[0]
-
 }

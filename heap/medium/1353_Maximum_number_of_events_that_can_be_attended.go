@@ -2,8 +2,9 @@ package medium
 
 import (
 	"container/heap"
-	"github.com/kweheliye/leetcode-go/heap/intheap"
 	"sort"
+
+	"github.com/kweheliye/leetcode-go/heap/intheap"
 )
 
 func maxEvents(events [][]int) int {
