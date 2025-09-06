@@ -6,7 +6,7 @@ func insertionSort(nums []int) {
 
 		for j > 0 && nums[j] < nums[j-1] {
 			nums[j], nums[j-1] = nums[j-1], nums[j]
-			j--
+
 		}
 	}
 }
