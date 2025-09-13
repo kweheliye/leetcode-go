@@ -30,11 +30,6 @@ func TestMaximumTripletValueGreedy(t *testing.T) {
 			input:    []int{-1, -2, -3, -4, -5},
 			expected: 0, // Expected result
 		},
-		{
-			name:     "Test Case with Mixed Numbers",
-			input:    []int{-5, 10, -3, 4, -2},
-			expected: 60,
-		},
 	}
 
 	for _, tt := range tests {

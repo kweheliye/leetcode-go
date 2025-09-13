@@ -1,0 +1,23 @@
+package medium
+
+func maxFreqSum(s string) int {
+	mp := make(map[byte]int)
+	for i := 0; i < len(s); i++ {
+		mp[s[i]]++
+	}
+
+	vowel, consonant := 0, 0
+	for ch := 'a'; ch <= 'z'; ch++ {
+		count := mp[byte(ch)]
+		if isVowelByte(byte(ch)) {
+			vowel = max(vowel, count)
+		} else {
+			consonant = max(consonant, count)
+		}
+	}
+	return vowel + consonant
+}
+
+func isVowelByte(c byte) bool {
+	return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
+}
