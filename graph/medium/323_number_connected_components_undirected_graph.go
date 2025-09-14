@@ -18,9 +18,7 @@ func countComponents(n int, edges [][]int) int {
 			dfsConnectedComponent(i, adjList, visited)
 		}
 	}
-
 	return components
-
 }
 
 func dfsConnectedComponent(startNode int, list [][]int, visited []bool) {
@@ -30,7 +28,5 @@ func dfsConnectedComponent(startNode int, list [][]int, visited []bool) {
 		if !visited[list[startNode][i]] {
 			dfsConnectedComponent(list[startNode][i], list, visited)
 		}
-
 	}
-
 }
