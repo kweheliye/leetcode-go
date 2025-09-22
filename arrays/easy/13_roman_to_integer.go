@@ -15,10 +15,10 @@ func romanToInt(s string) int {
 	n := len(s)
 
 	for i := 0; i < n; i++ {
-		currValue := values[rune(i)]
+		currValue := values[rune(s[i])]
 
 		if i+1 < n && currValue < values[rune(s[i+1])] {
-			sum += currValue - values[rune(s[i+1])]
+			sum -= currValue
 		} else {
 			sum += currValue
 		}

@@ -10,7 +10,7 @@ func makeFancyString(s string) string {
 	ans.WriteByte(s[1])
 
 	for i := 2; i < len(s); i++ {
-		if s[i] == s[i-1] || s[i] == s[i-2] {
+		if !(s[i] == s[i-1] && s[i-1] == s[i-2]) {
 			ans.WriteByte(s[i])
 		}
 	}

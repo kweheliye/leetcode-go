@@ -19,11 +19,11 @@ func Test_findKDistantIndices(t *testing.T) {
 		{
 			name: "Test Case 1",
 			args: args{
-				nums: []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
-				key:  5,
-				k:    2,
+				nums: []int{3, 4, 9, 1, 3, 9, 5},
+				key:  9,
+				k:    1,
 			},
-			want: []int{1, 3, 5, 7, 9},
+			want: []int{1, 2, 3, 4, 5, 6},
 		},
 	}
 	for _, tt := range tests {

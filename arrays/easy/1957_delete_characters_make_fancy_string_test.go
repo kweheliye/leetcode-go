@@ -16,6 +16,7 @@ func TestMakeFancyString(t *testing.T) {
 			args: args{
 				s: "leeetcode",
 			},
+			want: "leetcode",
 		},
 	}
 	for _, tt := range tests {

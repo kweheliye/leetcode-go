@@ -21,8 +21,14 @@ func TestMaxFrequencyElements(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maxFrequencyElements(tt.args.nums); got != tt.want {
-				t.Errorf("maxFrequencyElements() = %v, want %v", got, tt.want)
+			if got := maxFrequencyElementsV1(tt.args.nums); got != tt.want {
+				t.Errorf("maxFrequencyElementsV1() = %v, want %v", got, tt.want)
+			}
+		})
+
+		t.Run(tt.name, func(t *testing.T) {
+			if got := maxFrequencyElementsV2(tt.args.nums); got != tt.want {
+				t.Errorf("maxFrequencyElementsV2() = %v, want %v", got, tt.want)
 			}
 		})
 	}

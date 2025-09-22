@@ -16,12 +16,14 @@ func TestFindLucky(t *testing.T) {
 			args: args{
 				arr: []int{2, 2, 3, 4},
 			},
+			want: 2,
 		},
 		{
 			name: "Test Case 2",
 			args: args{
 				arr: []int{1, 2, 2, 3, 3, 3},
 			},
+			want: 3,
 		},
 	}
 	for _, tt := range tests {

@@ -18,7 +18,7 @@ func TestContainsNearbyDuplicate(t *testing.T) {
 				nums: []int{1, 2, 3, 1},
 				k:    3,
 			},
-			want: false,
+			want: true,
 		},
 	}
 	for _, tt := range tests {

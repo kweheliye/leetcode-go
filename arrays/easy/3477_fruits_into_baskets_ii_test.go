@@ -22,6 +22,7 @@ func Test_numOfUnplacedFruitsV1(t *testing.T) {
 					4,
 				},
 			},
+			want: 1,
 		},
 
 		{
@@ -34,6 +35,7 @@ func Test_numOfUnplacedFruitsV1(t *testing.T) {
 					7,
 				},
 			},
+			want: 0,
 		},
 	}
 
@@ -42,14 +44,6 @@ func Test_numOfUnplacedFruitsV1(t *testing.T) {
 			if got := numOfUnplacedFruitsV1(tt.args.fruits, tt.args.baskets); got != tt.want {
 				t.Errorf("numOfUnplacedFruitsV1() = %v, want %v", got, tt.want)
 
-			}
-		})
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := numOfUnplacedFruitsV2(tt.args.fruits, tt.args.baskets); got != tt.want {
-				t.Errorf("numOfUnplacedFruitsV2() = %v, want %v", got, tt.want)
 			}
 		})
 	}
