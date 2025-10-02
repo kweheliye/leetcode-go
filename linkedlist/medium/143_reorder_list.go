@@ -4,7 +4,8 @@ import "github.com/kweheliye/leetcode-go/linkedlist"
 
 func reorderList(head *linkedlist.ListNode) {
 
-	nodes := make([]*linkedlist.ListNode, 0)
+	var nodes []*linkedlist.ListNode
+
 	curr := head
 
 	for curr != nil {
