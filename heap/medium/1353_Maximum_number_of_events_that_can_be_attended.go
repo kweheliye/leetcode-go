@@ -4,7 +4,7 @@ import (
 	"container/heap"
 	"sort"
 
-	"github.com/kweheliye/leetcode-go/heap/intheap"
+	"github.com/kweheliye/leetcode-go/heap/int_heap"
 )
 
 func maxEvents(events [][]int) int {
@@ -19,7 +19,7 @@ func maxEvents(events [][]int) int {
 		return events[a][0] < events[b][0]
 	})
 
-	pq := intheap.NewIntHeap([]int{})
+	pq := heap.NewIntHeap([]int{})
 	ans := 0
 	for i, j := 1, 0; i <= maxDay; i++ {
 		for j < n && events[j][0] == i {

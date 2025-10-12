@@ -3,19 +3,19 @@ package easy
 import (
 	"container/heap"
 
-	"github.com/kweheliye/leetcode-go/heap/intheap"
+	"github.com/kweheliye/leetcode-go/heap/int_heap"
 )
 
 type KthLargest struct {
 	k       int
-	minHeap *intheap.IntHeap
+	minHeap *int_heap.MinHeap
 }
 
 func Constructor(k int, nums []int) KthLargest {
 
 	kLargest := KthLargest{
 		k:       k,
-		minHeap: intheap.NewIntHeap([]int{}),
+		minHeap: int_heap.NewMinHeap([]int{}),
 	}
 
 	for i := 0; i < len(nums); i++ {
