@@ -2,34 +2,27 @@ package easy
 
 import "testing"
 
-func TestValidPalindrome(t *testing.T) {
-	testCases := []struct {
-		name     string
-		input    string
-		expected bool
+func Test_firstPalindrome(t *testing.T) {
+	type args struct {
+		words []string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
 	}{
 		{
-			name:     "TestCase1",
-			input:    "aba",
-			expected: true,
-		},
-		{
-			name:     "TestCase2",
-			input:    "abca",
-			expected: true,
-		},
-		{
-			name:     "TestCase3",
-			input:    "abc",
-			expected: false,
+			name: "Test Case 1",
+			args: args{
+				words: []string{"abc", "car", "ada", "racecar", "cool"},
+			},
+			want: "ada",
 		},
 	}
-	for _, testCase := range testCases {
-		t.Run(testCase.name, func(t *testing.T) {
-			result := validPalindrome(testCase.input)
-
-			if result != testCase.expected {
-				t.Errorf("Expected %v, but got %v", testCase.expected, result)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := firstPalindrome(tt.args.words); got != tt.want {
+				t.Errorf("firstPalindrome() = %v, want %v", got, tt.want)
 			}
 		})
 	}

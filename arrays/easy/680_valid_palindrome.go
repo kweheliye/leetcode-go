@@ -1,28 +1,20 @@
 package easy
 
-func validPalindrome(s string) bool {
-	p2 := len(s) - 1
-	p1 := 0
-	for p1 < p2 {
-		if s[p1] != s[p2] {
-			return check(p1+1, p2, s) || check(p1, p2-1, s)
+func firstPalindrome(words []string) string {
+	for _, word := range words {
+		if isPalindrome(word) {
+			return word
 		}
-
-		p1++
-		p2--
 	}
-
-	return true
+	return ""
 }
+func isPalindrome(s string) bool {
 
-func check(left, right int, s string) bool {
-	for left < right {
+	for left, right := 0, len(s)-1; left < right; {
 		if s[left] != s[right] {
 			return false
 		}
-		left++
-		right--
+		left, right = left+1, right-1
 	}
-
 	return true
 }
